@@ -44,7 +44,7 @@ https://www.tinkercad.com/things/cYBZPKLtjub-sweep-example
 
 **Faris Bahussain**
 
-Electronics and Electrical Power Track
+Electrical Engineering, Electronics, and Internet of Things (IoT) Track
 
 
 
