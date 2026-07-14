@@ -1,4 +1,3 @@
-# arduino-servo-sweep
 # Arduino Servo Sweep Example
 
 ## Description
@@ -40,6 +39,13 @@ https://www.tinkercad.com/things/cYBZPKLtjub-sweep-example
 ## Preview
 
 <img width="1447" height="752" alt="image" src="https://github.com/user-attachments/assets/4e62b713-ae6f-42ab-b43f-1459c4611d4c" />
+
+# Author
+
+**Faris Bahussain**
+
+Electronics and Electrical Power Track
+
 
 
 
