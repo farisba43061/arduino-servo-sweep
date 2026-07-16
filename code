@@ -1,67 +1,84 @@
-#include <Servo.h>    // Includes the Servo library so we can control servo motors
+#include <Servo.h>   // Include the Servo library to control servo motors
 
-// Create four servo objects
+// ----------------------------------------------------
+// Create four Servo objects (one for each servo motor)
+// ----------------------------------------------------
 Servo servo1;
 Servo servo2;
 Servo servo3;
 Servo servo4;
 
-// Variable that stores the current servo position (0° to 180°)
+// Variable used to store the current servo angle
 int pos = 0;
 
 void setup() {
 
-  // Connect each servo object to its Arduino digital pin
-  servo1.attach(3);
-  servo2.attach(5);
-  servo3.attach(6);
-  servo4.attach(9);
+  // ----------------------------------------------------
+  // Attach each servo to its corresponding Arduino pin
+  // ----------------------------------------------------
+  servo1.attach(2);   // Servo 1 signal wire connected to pin 2
+  servo2.attach(3);   // Servo 2 signal wire connected to pin 3
+  servo3.attach(4);   // Servo 3 signal wire connected to pin 4
+  servo4.attach(5);   // Servo 4 signal wire connected to pin 5
 
-  // Record the time when the program starts
-  // millis() returns the number of milliseconds since the Arduino was powered on
+  // ----------------------------------------------------
+  // Store the current time.
+  // This will be used to make the sweep last exactly
+  // 2 seconds.
+  // ----------------------------------------------------
   unsigned long startTime = millis();
 
-  // Keep running the sweep until 2 seconds (2000 milliseconds) have passed
+  // ----------------------------------------------------
+  // Continue sweeping while less than 2 seconds have
+  // passed since the program started.
+  // ----------------------------------------------------
   while (millis() - startTime < 2000) {
 
-    // Move the servos from 0° to 180°
+    // ----------------------------------------------------
+    // Sweep all servos from 0° to 180°
+    // ----------------------------------------------------
     for (pos = 0; pos <= 180; pos++) {
 
-      // Set all four servos to the current position
+      // Move every servo to the same angle
       servo1.write(pos);
       servo2.write(pos);
       servo3.write(pos);
       servo4.write(pos);
 
-      // Wait 5 milliseconds before moving to the next position
-      // A smaller delay makes the servo move faster
+      // Wait 5 milliseconds before moving again
+      // This controls the speed of the sweep.
       delay(5);
 
-      // Check if 2 seconds have passed
-      // If they have, stop this for loop immediately
+      // If 2 seconds have passed, stop the sweep immediately
       if (millis() - startTime >= 2000)
         break;
     }
 
-    // Move the servos back from 180° to 0°
+    // ----------------------------------------------------
+    // Sweep all servos from 180° back to 0°
+    // ----------------------------------------------------
     for (pos = 180; pos >= 0; pos--) {
 
-      // Set all four servos to the current position
+      // Move every servo to the same angle
       servo1.write(pos);
       servo2.write(pos);
       servo3.write(pos);
       servo4.write(pos);
 
-      // Wait 5 milliseconds before moving to the next position
+      // Wait 5 milliseconds before moving again
       delay(5);
 
-      // Stop the sweep if 2 seconds have passed
+      // Stop if the total running time reaches 2 seconds
       if (millis() - startTime >= 2000)
         break;
     }
   }
 
-  // Move all servos back to the center position (90°)
+  // ----------------------------------------------------
+  // After the sweep is finished (2 seconds),
+  // move all servos to the center position (90°)
+  // and keep them there.
+  // ----------------------------------------------------
   servo1.write(90);
   servo2.write(90);
   servo3.write(90);
@@ -69,6 +86,9 @@ void setup() {
 }
 
 void loop() {
-  // Nothing is placed here, so after setup() finishes,
-  // the Arduino does not repeat the sweep.
+  // ----------------------------------------------------
+  // Nothing is placed here because the assignment only
+  // requires the servos to perform the sweep once,
+  // then remain at 90°.
+  // ----------------------------------------------------
 }
