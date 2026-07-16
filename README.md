@@ -34,11 +34,12 @@ This project demonstrates the Arduino **Servo Sweep** example using **four SG90 
 - `Circuit.png` – Tinkercad circuit screenshot
 
 ## Tinkercad Circuit
-https://www.tinkercad.com/things/cYBZPKLtjub-sweep-example
+https://www.tinkercad.com/things/iUAGCuXcbPS-sweep-example
+
 
 ## Preview
 
-<img width="1447" height="752" alt="image" src="https://github.com/user-attachments/assets/4e62b713-ae6f-42ab-b43f-1459c4611d4c" />
+<img width="1528" height="635" alt="sweep example" src="https://github.com/user-attachments/assets/5dc5b57d-734b-4082-8cdc-4ca286d946c9" />
 
 # Author
 
